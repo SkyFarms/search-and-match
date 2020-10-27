@@ -10,7 +10,7 @@ export default styled.div`
   .banner {
     position: relative;
     width: 100%;
-    height: 600px;
+    height: 100%;
     background-image: url('https://www.ibizapropertyguide.com/wp-content/uploads/2017/09/ibiza-property-guide-garden-vegetables.jpg');
     background-size: cover;
     background-position: center;
