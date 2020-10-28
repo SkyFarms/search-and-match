@@ -4,7 +4,7 @@ import './App.css';
 
 import NavBar from 'components/NavBar';
 import HeroBanner from 'components/HeroBanner';
-import PhotoGrid from 'components/PhotoGrid';
+import Grid from 'components/Grid';
 
 function App() {
   const photoGridItems = [
@@ -24,11 +24,32 @@ function App() {
       image: 'https://i.pinimg.com/originals/c2/ba/9d/c2ba9daa0daaaf0bbcbe0b5b52d2c8dc.jpg'
     }
   ];
+
+  const textGridItems = [
+    {
+      title: 'FIND, start',
+      description: 'join, share, local farming projects'
+    },
+    {
+      title: 'CONNECT',
+      description: `with community of information volunteers, experts, empty space product's ideas`
+    },
+    {
+      title: 'GROW food',
+      description: 'security in your area ith access to sustainable agriculture'
+    }
+  ];
+
   return (
     <div className="App">
       <NavBar />
       <HeroBanner />
-      <PhotoGrid items={photoGridItems} />
+      <Grid type="photo" title="Check out where we are growing" items={photoGridItems} />
+      <Grid
+        type="text"
+        title="Growing Food, Feeding People, and Saving the Planet is as easy as 1, 2, 3."
+        items={textGridItems}
+      />
     </div>
   );
 }
