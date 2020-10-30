@@ -7,6 +7,7 @@ export default styled.div`
   max-height: 800px;
   min-height: 600px;
   height: calc(70vh - 72px);
+  background-color: #FCFCFC;
   .banner {
     position: relative;
     width: 100%;

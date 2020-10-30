@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export default styled.div`
+	max-width: 1080px;
+  margin: 0 auto;
   .title {
-    margin-bottom: 24px;
     margin-top: 0;
     max-width: 735px;
     font-size: 48px;
@@ -14,12 +15,15 @@ export default styled.div`
   .itemsWrapper {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 56px;
     .item {
-      margin: 0px 40px 0px 0px;
       width: 320px;
       text-decoration: none !important;
+      margin-right: 20px;
+      &:last-child {
+        margin-right: 0px;
+      }
       &.photoItem {
         .image {
           position: relative;
@@ -41,6 +45,14 @@ export default styled.div`
       }
       &.textItem {
         text-align: left;
+        .title {
+          font-size: 24px;
+          line-height: 32px;
+          letter-spacing: -0.3px;
+        }
+        .description {
+          font-size: 20px;
+        }
       }
     }
   }
