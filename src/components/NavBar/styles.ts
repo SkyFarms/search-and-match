@@ -15,7 +15,7 @@ export default styled(AppBar)`
       align-items: center;
       justify-content: center;
       font-size: 20px;
-	  font-weight: 600;
+	  font-weight: 500;
 	  color: #c0392b;
     }
   }

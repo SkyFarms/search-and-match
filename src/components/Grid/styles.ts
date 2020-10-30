@@ -5,11 +5,11 @@ export default styled.div`
   margin: 0 auto;
   .title {
     margin-top: 0;
-    max-width: 735px;
+    max-width: 776px;
     font-size: 48px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 56px;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
     text-align: left;
   }
   .itemsWrapper {
@@ -37,18 +37,15 @@ export default styled.div`
         .name {
           margin-top: 20px;
           color: #4a4a4a;
-          line-height: 32px;
-          font-weight: 600;
+          font-weight: 500;
           font-size: 24px;
-          letter-spacing: -0.3px;
         }
       }
       &.textItem {
         text-align: left;
         .title {
           font-size: 24px;
-          line-height: 32px;
-          letter-spacing: -0.3px;
+          letter-spacing: normal;
         }
         .description {
           font-size: 20px;
