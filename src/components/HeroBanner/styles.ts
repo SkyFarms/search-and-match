@@ -7,10 +7,11 @@ export default styled.div`
   max-height: 800px;
   min-height: 600px;
   height: calc(70vh - 72px);
+  background-color: #FCFCFC;
   .banner {
     position: relative;
     width: 100%;
-    height: 600px;
+    height: 100%;
     background-image: url('https://www.ibizapropertyguide.com/wp-content/uploads/2017/09/ibiza-property-guide-garden-vegetables.jpg');
     background-size: cover;
     background-position: center;
@@ -26,7 +27,7 @@ export default styled.div`
       padding: 0 36px;
       .actionTitle {
         font-size: 72px;
-        font-weight: 600;
+        font-weight: 500;
         color: #fff;
         max-width: 700px;
         text-align: left;
@@ -39,7 +40,7 @@ export default styled.div`
         margin: 0 0 63px;
         font-size: 20px;
         line-height: 32px;
-        font-weight: 600;
+        font-weight: 500;
         color: #fff;
         text-align: left;
       }
@@ -58,8 +59,6 @@ export default styled.div`
         cursor: pointer;
         font-weight: 600;
         font-size: 18px;
-        line-height: 24px;
-        letter-spacing: -0.3px;
       }
     }
   }

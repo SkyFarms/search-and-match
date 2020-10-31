@@ -1,13 +1,16 @@
 import React from 'react';
+
 import './App.css';
+
 import NavBar from 'components/NavBar';
-import HeroBanner from 'components/HeroBanner';
+
+import LandingPage from 'pages/LandingPage';
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <HeroBanner />
+      <LandingPage />
     </div>
   );
 }
