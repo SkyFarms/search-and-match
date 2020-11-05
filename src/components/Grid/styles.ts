@@ -4,7 +4,7 @@ export default styled.div`
 	max-width: 1080px;
   margin: 0 auto;
   .title {
-    margin-top: 0;
+    margin: 0px 0px 36px;
     max-width: 776px;
     font-size: 48px;
     font-weight: 500;
@@ -16,14 +16,12 @@ export default styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 56px;
     .item {
       width: 320px;
       text-decoration: none !important;
-      margin-right: 20px;
-      &:last-child {
-        margin-right: 0px;
-      }
+      display: flex;
+      flex-direction: column;
+      margin: 20px;
       &.photoItem {
         .image {
           position: relative;
@@ -33,6 +31,10 @@ export default styled.div`
           border-radius: 4px;
           background-size: cover;
           background-position: center;
+          transition: all 0.3s ease;
+          &:hover {
+            transform: scale(1.1);
+          }
         }
         .name {
           margin-top: 20px;
@@ -46,6 +48,7 @@ export default styled.div`
         .title {
           font-size: 24px;
           letter-spacing: normal;
+          margin: 0px;
         }
         .description {
           font-size: 20px;

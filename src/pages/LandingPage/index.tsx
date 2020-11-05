@@ -1,7 +1,8 @@
 import React from 'react';
 
+import Pages from 'pages';
 import HeroBanner from 'components/HeroBanner';
-import Grid from 'components/Grid';
+import GridLayout from 'components/Grid';
 
 import Root from './styles';
 
@@ -40,20 +41,21 @@ const LandingPage  = () => {
   ];
   
 	return (
-		<Root>
-			<HeroBanner />
-      <div className="featuredSection">
-			  <Grid type="photo" title="Check out where we are growing" items={photoGridItems} />
-      </div>
-      {/* <div className="divider" /> */}
-			<div className="howItWorksSection">
-        <Grid
-          type="text"
-          title="Growing Food, Feeding People, and Saving the Planet is as easy as 1, 2, 3."
-          items={textGridItems}
-        />
-      </div>
-		</Root>
+		<Pages>
+			<Root>
+				<HeroBanner />
+				<div className="featuredSection">
+					<GridLayout type="photo" title="Check out where we are growing" items={photoGridItems} />
+				</div>
+				<div className="howItWorksSection">
+					<GridLayout
+						type="text"
+						title="Growing Food, Feeding People, and Saving the Planet is as easy as 1, 2, 3."
+						items={textGridItems}
+					/>
+				</div>
+			</Root>
+		</Pages>
 	)
 };
 
