@@ -1,33 +1,38 @@
 import React from 'react';
+import Grid from '@material-ui/core/Grid';
 
 import Root from './styles';
 
 import PhotoGridItem, { PhotoGridItemProps } from './PhotoGridItem';
 import TextGridItem, { TextGridItemProps } from './TextGridItem';
 
-type GridItemProps = PhotoGridItemProps | TextGridItemProps;
+// type GridItemProps = PhotoGridItemProps | TextGridItemProps;
 
 interface GridProps {
-  title: string;
+  title?: string;
   type: 'text' | 'photo';
   items: any[]; // TODO: fix type for property
 }
 
-const Grid: React.FC<GridProps> = ({ type, title, items }) => {
+const GridLayout: React.FC<GridProps> = ({ type, title, items }) => {
   return (
-    <Root>
-      <div className="title">{title}</div>
-      <div className="itemsWrapper">
+    <Root className="gridWrapper">
+      {title ? <div className="title">{title}</div> : null}
+      <Grid container className="itemsWrapper">
         {type === 'photo'
           ? items.map((item: PhotoGridItemProps, index: number) => (
-              <PhotoGridItem image={item.image} name={item.name} key={`grid_item_${index}`} />
+              <Grid item key={`grid_item_${index}`}>
+				        <PhotoGridItem image={item.image} name={item.name} />
+			        </Grid>
             ))
           : items.map((item: TextGridItemProps, index: number) => (
-              <TextGridItem title={item.title} description={item.description} key={`grid_item_${index}`} />
+              <Grid item key={`grid_item_${index}`}>
+				        <TextGridItem title={item.title} description={item.description} />
+			        </Grid>
             ))}
-      </div>
+		  </Grid>    
     </Root>
   );
 };
 
-export default Grid;
+export default GridLayout;
