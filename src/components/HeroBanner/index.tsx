@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from '@material-ui/core/Link';
+import {Link} from 'react-router-dom';
 
 import Root from './styles';
 
@@ -10,7 +10,7 @@ const HeroBanner: React.FC = () => {
         <div className="bannerContent">
           <div className="actionTitle">Explore New Farming Projects</div>
           <div className="actionDescription">Find start to finish resources, share your goods and services</div>
-          <Link href="#" className="action">
+          <Link to="/projects" className="action">
             <span>Browse Projects</span>
           </Link>
         </div>

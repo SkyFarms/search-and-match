@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 export default styled.div`
-	margin-top: 72px;
-	.featuredSection {
-		padding: 20px 20px 96px;
+  .featuredSection {
+	  padding: 20px 20px 96px;
     background-color: #fcfcfc;
   }
   .divider {
