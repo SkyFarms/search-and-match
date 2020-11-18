@@ -8,6 +8,7 @@ import './App.css';
 
 import LandingPage from 'pages/LandingPage';
 import ProjectsListPage from 'pages/ProjectsListPage';
+import CreateProjectPage from 'pages/CreateProjectPage';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
 			</Route>
 			<Route path="/projects">
 				<ProjectsListPage />
+			</Route>
+			<Route path="/create">
+				<CreateProjectPage />
 			</Route>
 		</Switch>
     </div>
