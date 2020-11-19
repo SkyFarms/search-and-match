@@ -1,3 +1,45 @@
+import Indoor from '../../assets/images/Indoor.jpg';
+import Outdoor from '../../assets/images/Outdoor.jpg';
+import Greenhouse from '../../assets/images/Greenhouse.jpg';
+import Aquaponics from '../../assets/images/Aquaponics.jpg';
+import Hydroponics from '../../assets/images/Hydroponics.png';
+import Aeroponics from '../../assets/images/Aeroponics.jpg';
+import Permaculture from '../../assets/images/Permaculture.jpg';
+import VerticalFarm from '../../assets/images/VerticalFarm.jpg';
+import FlatFarm from '../../assets/images/FlatGrowing.jpg';
+import HaveSpace from '../../assets/images/HaveSpace.jpeg';
+import NeedSpace from '../../assets/images/NeedSpace.jpg';
+import UndergroundFarm from '../../assets/images/UndergroundGrowing.jpg';
+import WallFarm from '../../assets/images/WallFarm.jpg';
+import YardFarm from '../../assets/images/YardFarm.jpeg';
+import ParkingLot from '../../assets/images/ParkingLot.jpg';
+import Rooftop from '../../assets/images/Rooftop.jpg';
+import ShippingContainer from '../../assets/images/ContainerFarm.jpg';
+import Residential from '../../assets/images/Residential.png';
+import Commercial from '../../assets/images/Commercial.jpg';
+import Terrace from '../../assets/images/Rooftop.jpg';
+import Garage from '../../assets/images/Warehouse.jpg';
+import Kitchen from '../../assets/images/Kitchen.jpg';
+import LocalScale from "../../assets/images/LocalFarmersMarket.jpeg";
+import PersonalScale from "../../assets/images/SmallFamilyFarm.jpg";
+import UrbanScale from "../../assets/images/UrbanFarm.jpg";
+import LargeScale from '../../assets/images/LargeIndustrialFarm.jpg';
+import CoopScale from "../../assets/images/CommunityFarm.jpg";
+import HighTech from "../../assets/images/High-Tech.jpg";
+import SmartTech from "../../assets/images/SmartFarming.jpg";
+import LowTech from "../../assets/images/LowTech.jpg";
+import Education from "../../assets/images/Education.jpg";
+import DataInsights from "../../assets/images/DataInsights.jpg";
+import Consulting from "../../assets/images/Consulting.jpeg";
+import SmartAG from "../../assets/images/SmartAG.png";
+import Design from "../../assets/images/Design.jpg";
+import Investment from "../../assets/images/Investment.jpg";
+import Research from "../../assets/images/Research.png";
+import Volunteers from "../../assets/images/Volunteers.jpg";
+import Tools from "../../assets/images/Tools.jpeg";
+import SustainableOptions from "../../assets/images/SustainableOptions.jpg";
+
+
 const Questions = [
 	{
 		id: 1,
@@ -5,20 +47,21 @@ const Questions = [
 		options: [
 			{
 				id: 1,
-				image: 'http://localhost:4000/Indoor.jpg',
+				image: Indoor,
 				text: 'INDOOR(CEA)'
 			},
 			{
 				id: 2,
-				image: 'http://localhost:4000/Outdoor.jpg',
+				image: Outdoor,
 				text: 'OUTDOOR'
 			},
 			{
 				id: 3,
-				image: 'http://localhost:4000/Greenhouse.jpg',
+				image: Greenhouse,
 				text: 'GREENHOUSE'
 			}
-		]
+		],
+		isMulti: false
 	},
 	{
 		id: 2,
@@ -26,25 +69,26 @@ const Questions = [
 		options: [
 			{
 				id: 4,
-				image: 'http://localhost:4000/Aquaponics.jpg',
+				image: Aquaponics,
 				text: 'AQUAPONICS (fish)'
 			},
 			{
 				id: 5,
-				image: 'http://localhost:4000/Hydroponics.png',
+				image: Hydroponics,
 				text: 'HYDROPONICS (h2o)'
 			},
 			{
 				id: 6,
-				image: 'http://localhost:4000/Aeroponics.jpg',
+				image: Aeroponics,
 				text: 'AEROPONICS (mist)'
 			},
 			{
 				id: 7,
-				image: 'http://localhost:4000/Permaculture%20%28SOIL%29.jpg',
+				image: Permaculture,
 				text: 'PERMACULTURE - REGENERATIVE FARMING (SOIL)'
 			}
-		]
+		],
+		isMulti: true
 	},
 	{
 		id: 3,
@@ -52,15 +96,16 @@ const Questions = [
 		options: [
 			{
 				id: 8,
-				image: 'http://localhost:4000/Vertical%20Farm.jpg',
+				image: VerticalFarm,
 				text: 'VERTICAL'
 			},
 			{
 				id: 9,
-				image: 'http://localhost:4000/Flat%20Growing.jpg',
+				image: FlatFarm,
 				text: 'FLAT'
 			}
-		]
+		],
+		isMulti: false
 	},
 	{
 		id: 4,
@@ -68,15 +113,16 @@ const Questions = [
 		options: [
 			{
 				id: 10,
-				image: 'http://localhost:4000/I%20have%20space.jpeg',
+				image: HaveSpace,
 				text: 'I HAVE SPACE'
 			},
 			{
 				id: 11,
-				image: 'http://localhost:4000/I%20Need%20Space.jpg',
+				image: NeedSpace,
 				text: 'I NEED SPACE'
 			}
-		]
+		],
+		isMulti: false
 	},
 	{
 		id: 5,
@@ -84,60 +130,61 @@ const Questions = [
 		options: [
 			{
 				id: 12,
-				image: 'http://localhost:4000/Underground%20Growing.jpg',
+				image: UndergroundFarm,
 				text: 'UNDERGROUND - BASEMENT'
 			},
 			{
 				id: 13,
-				image: 'http://localhost:4000/Wall%20Farm.jpg',
+				image: WallFarm,
 				text: 'WALL'
 			},
 			{
 				id: 14,
-				image: 'http://localhost:4000/Yard%20Farm.jpeg',
+				image: YardFarm,
 				text: 'YARD OR EMPTY PLOT'
 			},
 			{
 				id: 15,
-				image: 'http://localhost:4000/Parking%20Lot.jpg',
+				image: ParkingLot,
 				text: 'PARKING LOT'
 			},
 			{
 				id: 16,
-				image: 'http://localhost:4000/Rooftop.jpg',
+				image: Rooftop,
 				text: 'ROOF'
 			},
 			{
 				id: 17,
-				image: 'http://localhost:4000/Container%20Farm.jpg',
+				image: ShippingContainer,
 				text: 'SHIPPING CONTAINER'
 			},
 			{
 				id: 18,
-				image: 'http://localhost:4000/Residential.png',
+				image: Residential,
 				text: 'RESIDENTIAL'
 			},
 			{
 				id: 19,
-				image: 'http://localhost:4000/Commercial.jpg',
+				image: Commercial,
 				text: 'COMMERCIAL'
 			},
 			{
 				id: 20,
-				image: 'http://localhost:4000/Rooftop.jpg',
+				image: Terrace,
 				text: 'TERRACE'
 			},
 			{
 				id: 21,
-				image: 'http://localhost:4000/Garage%3AWarehouse.jpg',
+				image: Garage,
 				text: 'GARAGE, WAREHOUSE or SPARE ROOM'
 			},
 			{
 				id: 22,
-				image: 'http://localhost:4000/Kitchen.jpg',
+				image: Kitchen,
 				text: 'MICROFARM - KITCHEN'
 			}
-		]
+		],
+		isMulti: true
 	},
 	{
 		id: 6,
@@ -145,30 +192,31 @@ const Questions = [
 		options: [
 			{
 				id: 23,
-				image: "http://localhost:4000/Local%20Farmers%20Market.jpeg",
+				image: LocalScale,
 				text: "LOCAL SCALE - FARMERS MARKET"
 			},
 			{
 				id: 24,
-				image: "http://localhost:4000/Small%20Family%20Farm.jpg",
+				image: PersonalScale,
 				text: "PERSONAL SCALE or FAMILY FARM"
 			},
 			{
 				id: 25,
-				image: "http://localhost:4000/Urban%20Farm.jpg",
+				image: UrbanScale,
 				text: "URBAN SCALE - CITY FARM"
 			},
 			{
 				id: 26,
-				image: 'http://localhost:4000/Large%20Industrial%20Farm.jpg',
+				image: LargeScale,
 				text: 'LARGE SCALE INDUSTRIAL FARM '
 			},
 			{
 				id: 27,
-				image: "http://localhost:4000/Community%20Farm.jpg",
+				image: CoopScale,
 				text: "CO-OP SCALE - COMMUNITY FARM - CSA"
 			}
-		]
+		],
+		isMulti: false
 	},
 	{
 		id: 7,
@@ -176,20 +224,21 @@ const Questions = [
 		options: [
 			{
 				id: 28,
-				image: "http://localhost:4000/High-Tech.jpg",
+				image: HighTech,
 				text: "HIGH-TECH (SMART/PRECISION AG)"
 			},
 			{
 				id: 29,
-				image: "http://localhost:4000/SMART%20Farming.jpg",
+				image: SmartTech,
 				text: "SMART OPTIONS"
 			},
 			{
 				id: 30,
-				image: "http://localhost:4000/Low%20Tech.jpg",
+				image: LowTech,
 				text: "LOW-TECH (REGENERATIVE AG, PERMACULTURE, HORTICULTURE, AGRONOMY)"
 			}
-		]
+		],
+		isMulti: false
 	},
 	{
 		id: 8,
@@ -197,55 +246,56 @@ const Questions = [
 		options: [
 			{
 				id: 31,
-				image: "http://localhost:4000/Education.jpg",
+				image: Education,
 				text: "EDUCATION"
 			},
 			{
 				id: 32,
-				image: "http://localhost:4000/Data%20Insights.jpg",
+				image: DataInsights,
 				text: "DATA INSIGHTS"
 			},
 			{
 				id: 33,
-				image: "http://localhost:4000/Consulting.jpeg",
+				image: Consulting,
 				text: "CONSULTING"
 			},
 			{
 				id: 34,
-				image: "http://localhost:4000/SMART%20AG%201.png",
+				image: SmartAG,
 				text: "SMART AG FOOD SECURITY MODEL"
 			},
 			{
 				id: 35,
-				image: "http://localhost:4000/Design.jpg",
+				image: Design,
 				text: "DESIGN - PLANS"
 			},
 			{
 				id: 36,
-				image: "http://localhost:4000/Investment.jpg",
+				image: Investment,
 				text: "INVESTMENT"
 			},
 			{
 				id: 37,
-				image: "http://localhost:4000/Research.png",
+				image: Research,
 				text: "RESEARCH and INNOVATION"
 			},
 			{
 				id: 38,
-				image: "http://localhost:4000/Volunteers.jpg",
+				image: Volunteers,
 				text: "VOLUNTEERS"
 			},
 			{
 				id: 39,
-				image: "http://localhost:4000/Tools.jpeg",
+				image: Tools,
 				text: "TOOLS - EQUIPMENT - SEEDS - INPUTS"
 			},
 			{
 				id: 40,
-				image: "http://localhost:4000/Sustainable%20Options.JPG",
+				image: SustainableOptions,
 				text: "SUSTAINABLE CLOSED-LOOP ADDITIONS/OPTIONS: APIARY, WATER, SOLAR ENERGY, COMPOST, "
 			}
-		]
+		],
+		isMulti: true
 	}
 ];
 
