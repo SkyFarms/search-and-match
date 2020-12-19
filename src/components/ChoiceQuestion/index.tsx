@@ -14,10 +14,13 @@ interface OptionType {
 interface Props {
 	show: boolean;
 	options: OptionType[];
+	isMultipleAnswer?: boolean;
 	question?: string;
 	selectedOptions: number[];
 	animationInterval?: number; // in milliseconds
 	onOptionSelected?: (optionId: number) => void;
+	onActionPrevious?: () => void;
+	onActionNext?: () => void;
 }
 
 interface OptionProps {
@@ -41,26 +44,45 @@ const Option: React.FC<OptionProps> = ({ xs, image, text, visible, selected, ani
 	</Grow>
 );
 
-const ChoiceQuestion: React.FC<Props> = ({ show, options, question, selectedOptions, animationInterval = 500, onOptionSelected }) => (
+const ChoiceQuestion: React.FC<Props> = ({
+	show,
+	options,
+	isMultipleAnswer = false,
+	question,
+	selectedOptions,
+	animationInterval = 500,
+	onOptionSelected,
+	onActionPrevious,
+	onActionNext
+}) => (
 	<Root container spacing={4}>
-		<Grid item xs={12}>
-			<div className="question">{question}</div>
+		<Grid item container spacing={4} xs={12} md={12}>
+			<Grid item xs={12}>
+				<div className="question">{question}</div>
+				{isMultipleAnswer && <div>(you can select multiple)</div>}
+			</Grid>
+			<Grid item xs={12}>
+				<Grid container justify="center" alignItems="center" spacing={4}>
+					{options.map((option: OptionType, index: number) => (
+						<Option
+							key={option.id}
+							visible={show}
+							xs={options.length === 2 || options.length === 4 ? 6 : 4}
+							image={option.image}
+							text={option.text}
+							selected={selectedOptions.indexOf(option.id) !== -1}
+							animationTimeout={animationInterval*index}
+							onSelect={() => onOptionSelected && onOptionSelected(option.id)}
+						/>
+					))}
+				</Grid>
+			</Grid>
 		</Grid>
 		<Grid item xs={12}>
-			<Grid container justify="center" alignItems="center" spacing={4}>
-				{options.map((option: OptionType, index: number) => (
-					<Option
-						key={option.id}
-						visible={show}
-						xs={options.length === 2 || options.length === 4 ? 6 : 4}
-						image={option.image}
-						text={option.text}
-						selected={selectedOptions.indexOf(option.id) !== -1}
-						animationTimeout={animationInterval*index}
-						onSelect={() => onOptionSelected && onOptionSelected(option.id)}
-					/>
-				))}
-			</Grid>
+			<div className="actionsWrapper">
+				<button className={onActionPrevious ? '' : 'hidden'} onClick={onActionPrevious}>Prev</button>
+				{onActionNext && <button disabled={Boolean(!selectedOptions.length)} onClick={onActionNext}>Next</button>}
+			</div>
 		</Grid>
 	</Root>
 );
