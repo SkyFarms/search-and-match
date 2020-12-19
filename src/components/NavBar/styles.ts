@@ -44,4 +44,17 @@ export default styled(AppBar)`
 		}
 	}
   }
+
+  @media(max-width: 480px) {
+	  .sectionWrapper {
+		  .section {
+			& > a {
+				font-size: 18px;
+			}
+			&.rightSection > a {
+				font-size: 16px;
+			}
+		}
+	  }
+  }
 `;
