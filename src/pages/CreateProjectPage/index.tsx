@@ -22,7 +22,7 @@ const CreateProjectPage = () => {
 	return (
 		<Pages>
 			<Root>
-				{answersFromQuestionnaire ? (
+				{!answersFromQuestionnaire ? (
 					<ContactInfo onSubmit={onContactInfoSubmit} />
 				) : (
 					<Questionanaire questions={Questions} onFinish={onQuestionnaireFinish} />
