@@ -1,68 +1,44 @@
 import React from 'react';
-// import Grid from '@material-ui/core/Grid';
+import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
+import Fade from '@material-ui/core/Fade';
+import Carousel from 'react-material-ui-carousel'
 
 import Pages from 'pages';
-import Grid from 'components/Grid';
 
-import Root from './styles';
+import Projects from './Projects';
+import Root, { ImageCarouselContainer } from './styles';
+
+interface ImageCarouselProps {
+	images: string[];
+}
+
+const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => (
+	<ImageCarouselContainer>
+		<Carousel indicators={false} animation={'fade'} interval={10000} navButtonsAlwaysInvisible>
+			{images.map(image => (
+				<div key={image} className="image" style={{ backgroundImage: `url('${image}')` }} />
+			))}
+		</Carousel>
+	</ImageCarouselContainer>
+);
 
 const ProjectsListPage = () => {
-	const photoGridItems = [
-    {
-      id: 1,
-      name: 'Warsaw Community College',
-      image: 'https://popupcity.net/wp-content/uploads/2018/05/Barcelona-rooftop-gardens-1-800x600.jpg'
-    },
-    {
-      id: 2,
-      name: 'Victory Garden California',
-      image: 'https://www.springwise.com/wp-content/uploads/2016/12/FarmInABox_community-farming_Springwise.jpg'
-    },
-    {
-      id: 3,
-      name: 'Victory Garden Michigan',
-      image: 'https://i.pinimg.com/originals/c2/ba/9d/c2ba9daa0daaaf0bbcbe0b5b52d2c8dc.jpg'
-	},
-	{
-      id: 4,
-      name: 'Warsaw Community College',
-      image: 'https://popupcity.net/wp-content/uploads/2018/05/Barcelona-rooftop-gardens-1-800x600.jpg'
-    },
-    {
-      id: 5,
-      name: 'Victory Garden California',
-      image: 'https://www.springwise.com/wp-content/uploads/2016/12/FarmInABox_community-farming_Springwise.jpg'
-    },
-    {
-      id: 6,
-      name: 'Victory Garden Michigan',
-      image: 'https://i.pinimg.com/originals/c2/ba/9d/c2ba9daa0daaaf0bbcbe0b5b52d2c8dc.jpg'
-	},
-	{
-      id: 7,
-      name: 'Warsaw Community College',
-      image: 'https://popupcity.net/wp-content/uploads/2018/05/Barcelona-rooftop-gardens-1-800x600.jpg'
-    },
-    {
-      id: 8,
-      name: 'Victory Garden California',
-      image: 'https://www.springwise.com/wp-content/uploads/2016/12/FarmInABox_community-farming_Springwise.jpg'
-    }
-  ];
-
 	return (
 		<Pages>
 			<Root>
-				<Grid type="photo" items={photoGridItems} />
-				{/* <Grid container spacing={2} justify="center">
-					{photoGridItems.map((item: any) => (
-						<Grid item key={item.id}>
-							<div className="image" style={{ backgroundImage: `url(${item.image})` }}></div>
-    						<div className="name">{item.name}</div>
+				<Grid container spacing={4}>
+					{Projects.map((project, index) => (
+						<Grid key={`grid_item_${project.id}`} item xs={12} sm={6} md={4}>
+							<Fade in timeout={{ enter: 1000*index }}>
+								<Paper>
+									<ImageCarousel images={project.images} />
+									<div className="projectName">{project.name}</div>
+								</Paper>
+							</Fade>
 						</Grid>
 					))}
-				</Grid> */}
+				</Grid>
 			</Root>
 		</Pages>
 	);
