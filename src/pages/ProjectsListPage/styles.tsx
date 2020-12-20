@@ -7,7 +7,7 @@ export const ImageCarouselContainer = styled.div`
 		background-size: contain;
 		background-position: center;
 		background-repeat: no-repeat;
-		background-color: #cecece;
+		background-color: #FAFAFA;
 	}
 `;
 

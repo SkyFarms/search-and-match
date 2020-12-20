@@ -20,19 +20,28 @@ const Questionanaire: React.FC<Props> = ({ questions, onFinish }) => {
 		}, ANIMATION_INTERVAL);
 	}, [currentQuestionIndex]);
 
+	const scrollPageToTop = useCallback(() => {
+		const pageContainer = document.querySelector('.pageContainer');
+		if (pageContainer) {
+			pageContainer.scrollTop = 0;
+		}
+	}, []);
+
 	const showNextQuestion = useCallback(() => {
 		setShowQuestion(false);
+		scrollPageToTop();
 		if (currentQuestionIndex === questions.length - 1) {
 			onFinish(answersForQuestions);
 		} else {
 			setCurrentQuestionIndex(currentQuestionIndex + 1);
 		}
-	}, [currentQuestionIndex, onFinish, questions, answersForQuestions]);
+	}, [currentQuestionIndex, onFinish, questions, answersForQuestions, scrollPageToTop]);
 
 	const showPreviousQuestion = useCallback(() => {
 		setShowQuestion(false);
+		scrollPageToTop();
 		setCurrentQuestionIndex(currentQuestionIndex - 1);
-	}, [currentQuestionIndex]);
+	}, [currentQuestionIndex, scrollPageToTop]);
 
 	const currentQuestion = questions[currentQuestionIndex];
 	const answersForCurrentQuestion = answersForQuestions[currentQuestionIndex];

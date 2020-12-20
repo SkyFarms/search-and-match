@@ -28,9 +28,9 @@ const ProjectsListPage = () => {
 		<Pages>
 			<Root>
 				<Grid container spacing={4}>
-					{Projects.map((project, index) => (
+					{Projects.sort(() => Math.random() - 0.5).map((project, index) => (
 						<Grid key={`grid_item_${project.id}`} item xs={12} sm={6} md={4}>
-							<Fade in timeout={{ enter: 1000*index }}>
+							<Fade in timeout={{ enter: 500*index }}>
 								<Paper>
 									<ImageCarousel images={project.images} />
 									<div className="projectName">{project.name}</div>
