@@ -14,6 +14,7 @@
     "express": "^4.17.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-material-ui-carousel": "^2.1.1",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.0",
@@ -24,8 +25,8 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-	"start": "node server/index.js",
-	"dev": "react-scripts start",
+    "start": "node server/index.js",
+    "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

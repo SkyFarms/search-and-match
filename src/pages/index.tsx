@@ -7,7 +7,7 @@ import PageContainer from './styles';
 const Pages: React.FC = ({children}) => (
 	<>
 		<NavBar />
-		<PageContainer>
+		<PageContainer className="pageContainer">
 			{children}
 		</PageContainer>
 	</>

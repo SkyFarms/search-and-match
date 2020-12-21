@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 
 export default styled.div`
-	.gridWrapper {
-		.itemsWrapper {
-			flex-wrap: wrap;
-			justify-content: flex-start;
-		}
-	}
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 40px 20px;
 `;
