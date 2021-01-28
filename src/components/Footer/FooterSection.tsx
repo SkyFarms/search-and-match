@@ -25,7 +25,7 @@ const FooterSection: React.FC<Props> = ({ sectionTitle, links }) => {
 				<Grid item xs={12}>
 					<Grid container>
 						{links.map(({ href, label, target }) => (
-							<Grid item xs={12}>
+							<Grid key={label} item xs={12}>
 								<LinkElement target={target} href={href}>
 									<Typography variant="subtitle2">{label}</Typography>
 								</LinkElement>
