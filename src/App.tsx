@@ -4,15 +4,16 @@ import {
   Route
 } from "react-router-dom";
 
-import './App.css';
+import NavBar from 'components/NavBar';
+import Footer from 'components/Footer';
 
 import LandingPage from 'pages/LandingPage';
 import ProjectsListPage from 'pages/ProjectsListPage';
 import CreateProjectPage from 'pages/CreateProjectPage';
 
-function App() {
-  return (
-    <div className="App">
+const App: React.FC = () => (
+	<>
+		<NavBar />
 		<Switch>
 			<Route exact path="/">
 				<LandingPage />
@@ -24,8 +25,8 @@ function App() {
 				<CreateProjectPage />
 			</Route>
 		</Switch>
-    </div>
-  );
-}
+		<Footer />
+	</>
+);
 
 export default App;
