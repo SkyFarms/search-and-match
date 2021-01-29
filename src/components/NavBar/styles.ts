@@ -21,7 +21,7 @@ export default styled(AppBar)`
 		}
 		&.rightSection > a {
 			font-size: 18px;
-			&: hover {
+			&:hover {
 				color: #8c291e;
 			}
 		}
