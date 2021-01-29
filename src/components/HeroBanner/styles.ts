@@ -1,65 +1,64 @@
 import styled from 'styled-components';
 
+import HeroBannerDesktop from '../../assets/images/HeroBanner_desktop.jpg';
+import HeroBannerMobile from '../../assets/images/HeroBanner_phone.jpg';
+import HeroBannerTab from '../../assets/images/HeroBanner_tab.jpg';
+
 export default styled.div`
-  padding: 40px;
   width: 100%;
   max-width: 1440px;
   max-height: 800px;
   min-height: 600px;
   height: calc(70vh - 72px);
   background-color: #FCFCFC;
-  .banner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-image: url('https://www.ibizapropertyguide.com/wp-content/uploads/2017/09/ibiza-property-guide-garden-vegetables.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 60px 0px;
-    .bannerContent {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      margin: 0 auto;
-      max-width: 1124px;
-      padding: 0 36px;
-      .actionTitle {
-        font-size: 72px;
-        font-weight: 500;
-        color: #fff;
-        max-width: 700px;
-        text-align: left;
-        line-height: 72px;
-        margin-top: 25px;
-        margin-bottom: 31px;
-      }
-      .actionDescription {
-        max-width: 700px;
-        margin: 0 0 63px;
-        font-size: 20px;
-        line-height: 32px;
-        font-weight: 500;
-        color: #fff;
-        text-align: left;
-      }
-      .action {
-        display: block;
-        width: 260px;
-        min-height: 65px;
-        margin: 0;
-        padding: 20px 0 0;
-        border: none;
-        border-radius: 2px;
-        background-color: #c0392b;
-        color: #fff;
-        text-align: center;
-        text-decoration: none;
-        cursor: pointer;
-        font-weight: 600;
-        font-size: 18px;
-      }
-    }
-  }
+  margin-bottom: 40px;
+	.banner {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background-image: url('${HeroBannerDesktop}');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		display: flex;
+		align-items: center;
+		.action {
+			position: absolute;
+			width: 260px;
+			padding: 20px;
+			border: none;
+			text-decoration: none !important;
+			text-decoration: none !important;
+			color: #fff;
+			cursor: pointer;
+			background-color: #DD4446;
+			box-shadow: 0px 0px 2px 0px rgba(255, 255, 255, 0.3);
+			text-align: center;
+			display: block;
+			left: 180px;
+			margin-top: 140px;
+			h5 {
+				font-weight: 500;
+			}
+		}
+	}
+	@media (max-width: 1024px) {
+		.banner {
+			background-image: url('${HeroBannerTab}');
+			.action {
+				left: 40px;
+			}
+		}
+	}
+	@media (max-width: 480px) {
+		.banner {
+			background-image: url('${HeroBannerMobile}');
+			justify-content: center;
+			.action {
+				left: unset;
+				margin-top: 0px;
+				bottom: 0px;
+			}
+		}
+	}
 `;
