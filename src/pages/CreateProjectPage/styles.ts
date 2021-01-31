@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 import Container from '@material-ui/core/Container';
 
+export const IntroContainer = styled(Container)`
+	.transitionDelay2000 {
+		transition-delay: 12000ms !important;
+	}
+`;
+
 export const ContactInfoGridContainer = styled(Container)`
 	padding: 40px 20px;
 	& > .MuiGrid-container {

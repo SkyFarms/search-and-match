@@ -4,11 +4,23 @@ import axios from 'axios';
 import Pages from 'pages';
 import ContactInfo, { ContactInfoState } from './ContactInfo';
 import Questionnaire from './Questionnaire';
+import Intro from './Intro';
 
 import Questions from './questions';
 
+const STAGE_INTRO = 'INTRO';
+const STAGE_QUESTIONNAIRE = 'QUESTIONNAIRE';
+const STAGE_CONTACT_INFO = 'CONTACT_INFO';
+const STAGE_OUTRO = 'OUTRO';
+
+type Stage = typeof STAGE_INTRO |
+					typeof STAGE_QUESTIONNAIRE | 
+					typeof STAGE_CONTACT_INFO |
+					typeof STAGE_OUTRO;
+
 const CreateProjectPage = () => {
 	const [answersFromQuestionnaire, setAnswersFromQuestionnaire] = useState<any[][]>();
+	const [currentStage, setCurrentStage] = useState<Stage>(STAGE_INTRO);
 
 	const onQuestionnaireFinish = useCallback((answers: any[][]) => {
 		setAnswersFromQuestionnaire(answers);
@@ -44,11 +56,19 @@ const CreateProjectPage = () => {
 	return (
 		<Pages>
 			<div>
-				{answersFromQuestionnaire ? (
-					<ContactInfo onSubmit={onContactInfoSubmit} />
-				) : (
-					<Questionnaire questions={Questions} onFinish={onQuestionnaireFinish} />
-				)}
+				{(() => {
+					switch (currentStage) {
+						case STAGE_INTRO:
+							return <Intro onFinish={() => {console.log("intro has finished")}} />;
+						case STAGE_QUESTIONNAIRE:
+							return <Questionnaire questions={Questions} onFinish={onQuestionnaireFinish} />;
+						case STAGE_CONTACT_INFO:
+							return <ContactInfo onSubmit={onContactInfoSubmit} />;
+						case STAGE_OUTRO:
+						default: 
+							return null;
+					}
+				})()}
 			</div>
 		</Pages>
 	);
