@@ -20,16 +20,16 @@ const LandingPage  = () => {
 	const getHowItWorksSteps = useCallback(() => {
 		const steps = [
 			{
-				title: '1. FIND, start',
-				description: 'join, share, local farming projects'
+				title: '1. SHARE',
+				description: 'Find, start, join, share, local farming projects'
 			},
 			{
 				title: '2. CONNECT',
 				description: `with community of information volunteers, experts, empty space product's ideas`
 			},
 			{
-				title: '3. GROW food',
-				description: 'security in your area ith access to sustainable agriculture'
+				title: '3. GROW',
+				description: 'food security in your area with access to sustainable agriculture'
 			}
 		];
 		return steps.map((step, index) => (
@@ -47,7 +47,7 @@ const LandingPage  = () => {
 			<Root>
 				<HeroBanner />
 				<Section className="featuredSection" title="Check out where we are growing" items={getProjectsToShow()} />
-				<Section className="howItWorksSection" title="Growing Food, Feeding People, and Saving the Planet is as easy as 1, 2, 3." items={getHowItWorksSteps()} />
+				<Section className="howItWorksSection" title="CONNECT with Agriculture Global Resources to GROW Local Food Secure Communities." items={getHowItWorksSteps()} />
 			</Root>
 		</Pages>
 	);

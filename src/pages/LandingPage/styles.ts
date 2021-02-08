@@ -14,7 +14,7 @@ export default styled.div`
 			margin: 0 auto;
 			.title {
 				margin: 0px 0px 36px;
-				max-width: 776px;
+				/* max-width: 776px; */
 				font-size: 48px;
 				font-weight: 500;
 				line-height: 56px;
