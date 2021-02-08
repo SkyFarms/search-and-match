@@ -3,6 +3,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
 import Hidden from '@material-ui/core/Hidden';
 
+import logo from '../../assets/images/skyfarms_logo.png';
+
 import MobileNavMenu from './MobileNavMenu';
 import NavMenu from './NavMenu';
 
@@ -15,7 +17,9 @@ const Header: React.FC = () => {
 				<Toolbar>
 					<Grid container spacing={0} className="header">
 						<Grid item xs={2} sm={2}>
-							<div>Connect & Grow</div>
+							<a href="https://skyfarms.io">
+								<img src={logo} className="logo" />
+							</a>
 						</Grid>
 						<Hidden mdDown>
 							<Grid item xs={2} sm={10}>
