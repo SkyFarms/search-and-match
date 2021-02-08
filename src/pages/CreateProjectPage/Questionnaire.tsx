@@ -15,9 +15,15 @@ const Questionanaire: React.FC<Props> = ({ questions, onFinish }) => {
 	const [showQuestion, setShowQuestion] = useState<boolean>(true);
 	
 	useEffect(() => {
-		setTimeout(() => {
+		const timeoutRef = setTimeout(() => {
 			setShowQuestion(true);
 		}, ANIMATION_INTERVAL);
+
+		return () => {
+			if (timeoutRef) {
+				clearTimeout(timeoutRef);
+			}
+		}
 	}, [currentQuestionIndex]);
 
 	const scrollPageToTop = useCallback(() => {
