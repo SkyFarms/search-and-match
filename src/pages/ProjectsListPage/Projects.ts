@@ -41,13 +41,6 @@ const Projects = [
 		]
 	},
 	{
-		id: 6,
-		name: 'Michelle Terrill Heath',
-		images: [
-			'https://skyfarms-resources.s3.amazonaws.com/projects/Michelle%20Terrill%20Heath1.jpg'
-		]
-	},
-	{
 		id: 7,
 		name: 'Michigan Family Farm',
 		images: [

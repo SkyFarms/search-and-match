@@ -43,13 +43,11 @@ const CreateProjectPage = () => {
 
 	return (
 		<Pages>
-			<div>
-				{answersFromQuestionnaire ? (
-					<ContactInfo onSubmit={onContactInfoSubmit} />
-				) : (
-					<Questionnaire questions={Questions} onFinish={onQuestionnaireFinish} />
-				)}
-			</div>
+			{answersFromQuestionnaire ? (
+				<ContactInfo onSubmit={onContactInfoSubmit} />
+			) : (
+				<Questionnaire questions={Questions} onFinish={onQuestionnaireFinish} />
+			)}
 		</Pages>
 	);
 };

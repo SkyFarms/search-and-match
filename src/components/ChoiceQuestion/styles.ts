@@ -6,8 +6,7 @@ export default styled(Grid)`
 	max-width: 1280px;
 	margin: 0 auto;
 	.question {
-		font-size: 24px;
-		font-weight: 500;
+		text-align: center;
 	}
 	.option {
 		cursor: pointer;
@@ -15,7 +14,7 @@ export default styled(Grid)`
 		border: 2px solid;
 		border-color: transparent;
 		&.selected {
-			border-color: #42A5F5;
+			border-color: #ff8100;
 		}
 		.image {
 			flex-grow: 1;
@@ -28,6 +27,7 @@ export default styled(Grid)`
 		}
 		.text {
 			padding: 20px;
+			text-align: center;
 		}
 	}
 	.actionsWrapper {
@@ -39,11 +39,10 @@ export default styled(Grid)`
 			text-transform: uppercase;
 			border: none;
 			outline: none;
-			font-size: 24px;
 			font-weight: 600;
 			background-color: transparent;
 			cursor: pointer;
-			color: #42a5f5;
+			color: #ff8100;
 			transition: all 0.5s ease;
 			text-decoration: underline;
 			&:disabled {
@@ -52,7 +51,7 @@ export default styled(Grid)`
 			}
 			&:hover {
 				text-decoration: none;
-				background-color: #42A5F5;
+				background-color: #ff8100;
 				color: #fff;
 			}
 			&.hidden {

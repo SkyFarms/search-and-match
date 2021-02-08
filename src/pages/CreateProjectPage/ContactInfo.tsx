@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import Fade from '@material-ui/core/Fade';
 import TextField from '@material-ui/core/TextField';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Typography from '@material-ui/core/Typography';
 
 import { ContactInfoGridContainer } from './styles';
 
@@ -86,7 +87,9 @@ const ContactInfo: React.FC<Props> = ({ onSubmit }) => {
 					{submitInProgress ? (
 						<CircularProgress />
 					) : (
-						<button disabled={!isValidToSubmit()} onClick={handleSubmitInfo}>Submit</button>
+						<button disabled={!isValidToSubmit()} onClick={handleSubmitInfo}>
+							<Typography variant="h5">Submit</Typography>
+						</button>
 					)}
 				</Grid>
 			</Grid>
