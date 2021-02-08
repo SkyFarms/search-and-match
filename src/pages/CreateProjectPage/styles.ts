@@ -2,8 +2,26 @@ import styled from 'styled-components';
 import Container from '@material-ui/core/Container';
 
 export const IntroContainer = styled(Container)`
-	.transitionDelay2000 {
-		transition-delay: 12000ms !important;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    color: #EE8033;
+	.transitionDelay700 {
+		transition-delay: 700ms !important;
+	}
+	.transitionDelay1000 {
+		transition-delay: 1000ms !important;
+	}
+	.transitionDelay1500 {
+		transition-delay: 1500ms !important;
+	}
+	.startBtn {
+		color: #fff;
+		background-color: #ff8100;
+		padding: 12px 16px;
+		border-radius: 24px;
 	}
 `;
 

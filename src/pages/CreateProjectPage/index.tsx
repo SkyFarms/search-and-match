@@ -5,6 +5,7 @@ import Pages from 'pages';
 import ContactInfo, { ContactInfoState } from './ContactInfo';
 import Questionnaire from './Questionnaire';
 import Intro from './Intro';
+import Outro from './Outro';
 
 import Questions from './questions';
 
@@ -22,8 +23,12 @@ const CreateProjectPage = () => {
 	const [answersFromQuestionnaire, setAnswersFromQuestionnaire] = useState<any[][]>();
 	const [currentStage, setCurrentStage] = useState<Stage>(STAGE_INTRO);
 
+	const onIntroFinish = useCallback(() => {
+		setCurrentStage(STAGE_QUESTIONNAIRE);
+	}, []);
 	const onQuestionnaireFinish = useCallback((answers: any[][]) => {
 		setAnswersFromQuestionnaire(answers);
+		setCurrentStage(STAGE_CONTACT_INFO);
 	}, []);
 
 	const onContactInfoSubmit = useCallback((contactInfo: ContactInfoState) => {
@@ -47,9 +52,12 @@ const CreateProjectPage = () => {
 			.then(res => {
 				console.log("response here: ", res)
 				console.log("res data: ", res.data);
+				setCurrentStage(STAGE_OUTRO);
 			})
 			.catch(err => {
 				console.error("error in post: ", err);
+				// TODO: remove after testing
+				setCurrentStage(STAGE_OUTRO);
 			});
 	}, [answersFromQuestionnaire]);
 
@@ -58,12 +66,13 @@ const CreateProjectPage = () => {
 			{(() => {
 				switch (currentStage) {
 					case STAGE_INTRO:
-						return <Intro onFinish={() => {console.log("intro has finished")}} />;
+						return <Intro onFinish={onIntroFinish} />;
 					case STAGE_QUESTIONNAIRE:
 						return <Questionnaire questions={Questions} onFinish={onQuestionnaireFinish} />;
 					case STAGE_CONTACT_INFO:
 						return <ContactInfo onSubmit={onContactInfoSubmit} />;
 					case STAGE_OUTRO:
+						return <Outro />
 					default: 
 						return null;
 				}
