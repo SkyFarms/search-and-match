@@ -122,6 +122,9 @@ export default styled(AppBar)`
 	.header {
 		align-items: center;
 		justify-content: space-between;
+		.logo {
+			max-width: 160px;
+		}
 	}
 	.mdMenuTrigger {
 		text-align: right;
