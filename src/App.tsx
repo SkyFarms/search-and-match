@@ -4,7 +4,7 @@ import {
   Route
 } from "react-router-dom";
 
-import NavBar from 'components/NavBar';
+import Header from 'components/Header';
 import Footer from 'components/Footer';
 
 import LandingPage from 'pages/LandingPage';
@@ -13,7 +13,7 @@ import CreateProjectPage from 'pages/CreateProjectPage';
 
 const App: React.FC = () => (
 	<>
-		<NavBar />
+		<Header />
 		<Switch>
 			<Route exact path="/">
 				<LandingPage />
@@ -21,7 +21,7 @@ const App: React.FC = () => (
 			<Route path="/projects">
 				<ProjectsListPage />
 			</Route>
-			<Route path="/create">
+			<Route path="/create-project">
 				<CreateProjectPage />
 			</Route>
 		</Switch>
