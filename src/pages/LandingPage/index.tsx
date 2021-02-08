@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import Fade from '@material-ui/core/Fade';
+import Typography from '@material-ui/core/Typography';
 
 import Pages from 'pages';
 import HeroBanner from 'components/HeroBanner';
@@ -35,8 +36,8 @@ const LandingPage  = () => {
 		return steps.map((step, index) => (
 			<Fade in timeout={{ enter: 300*index }}>
 				<div className="item textItem">
-					<div className="title">{step.title}</div>
-					<div className="description">{step.description}</div>
+					<Typography variant="h5">{step.title}</Typography>
+					<Typography variant="h6">{step.description}</Typography>
 				</div>
 			</Fade>
 		));

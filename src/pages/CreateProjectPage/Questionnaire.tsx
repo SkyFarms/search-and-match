@@ -21,10 +21,7 @@ const Questionanaire: React.FC<Props> = ({ questions, onFinish }) => {
 	}, [currentQuestionIndex]);
 
 	const scrollPageToTop = useCallback(() => {
-		const pageContainer = document.querySelector('.pageContainer');
-		if (pageContainer) {
-			pageContainer.scrollTop = 0;
-		}
+		window.scrollTo(0, 0);
 	}, []);
 
 	const showNextQuestion = useCallback(() => {

@@ -1,6 +1,8 @@
 import React, { ReactElement } from 'react';
-
+import Typography from '@material-ui/core/Typography';
 import GridLayout from 'components/GridLayout';
+
+import { SectionContainer } from './styles';
 
 interface Props {
 	title: string;
@@ -10,12 +12,12 @@ interface Props {
 
 const Section: React.FC<Props> = ({ title, className = '', items }) => {
 	return (
-		<div className={`section ${className}`}>
+		<SectionContainer className={`section ${className}`}>
 			<div className="sectionContent">
-				<div className="title">{title}</div>
+				<Typography variant="h3" className="title">{title}</Typography>
 				<GridLayout items={items} />
 			</div>
-		</div>
+		</SectionContainer>
 	);
 };
 

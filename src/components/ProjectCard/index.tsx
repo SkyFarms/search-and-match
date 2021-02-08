@@ -1,5 +1,6 @@
 import React from 'react';
 import Carousel from 'react-material-ui-carousel'
+import Typography from '@material-ui/core/Typography';
 
 import Root, { ImageCarouselContainer } from './styles';
 
@@ -26,7 +27,7 @@ const ProjectCard: React.FC<Props> = ({ name, images }) => {
 	return (
 		<Root>
 			<ImageCarousel images={images} />
-			<div className="projectName">{name}</div>
+			<Typography className="projectName" variant="h6" color="inherit">{name}</Typography>
 		</Root>
 	)
 };
