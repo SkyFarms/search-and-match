@@ -27,11 +27,10 @@ export const ContactInfoGridContainer = styled(Container)`
 			text-transform: uppercase;
 			border: none;
 			outline: none;
-			font-size: 24px;
 			font-weight: 600;
 			cursor: pointer;
 			transition: all 0.5s ease;
-			background-color: #42A5F5;
+			background-color: #ff8100;
 			color: #fff;
 			&:disabled {
 				color: #9e9e9e;

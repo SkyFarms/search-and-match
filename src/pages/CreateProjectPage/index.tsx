@@ -55,21 +55,19 @@ const CreateProjectPage = () => {
 
 	return (
 		<Pages>
-			<div>
-				{(() => {
-					switch (currentStage) {
-						case STAGE_INTRO:
-							return <Intro onFinish={() => {console.log("intro has finished")}} />;
-						case STAGE_QUESTIONNAIRE:
-							return <Questionnaire questions={Questions} onFinish={onQuestionnaireFinish} />;
-						case STAGE_CONTACT_INFO:
-							return <ContactInfo onSubmit={onContactInfoSubmit} />;
-						case STAGE_OUTRO:
-						default: 
-							return null;
-					}
-				})()}
-			</div>
+			{(() => {
+				switch (currentStage) {
+					case STAGE_INTRO:
+						return <Intro onFinish={() => {console.log("intro has finished")}} />;
+					case STAGE_QUESTIONNAIRE:
+						return <Questionnaire questions={Questions} onFinish={onQuestionnaireFinish} />;
+					case STAGE_CONTACT_INFO:
+						return <ContactInfo onSubmit={onContactInfoSubmit} />;
+					case STAGE_OUTRO:
+					default: 
+						return null;
+				}
+			})()}
 		</Pages>
 	);
 };

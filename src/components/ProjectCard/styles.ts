@@ -5,9 +5,7 @@ export default styled(Paper)`
 	.projectName {
 		padding: 32px 20px 20px;
 		text-align: center;
-		font-size: 20px;
 		color: #4a4a4a;
-		font-weight: 500;
 	}
 `;
 

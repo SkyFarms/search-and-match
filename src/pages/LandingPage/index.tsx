@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import Fade from '@material-ui/core/Fade';
+import Typography from '@material-ui/core/Typography';
 
 import Pages from 'pages';
 import HeroBanner from 'components/HeroBanner';
@@ -20,23 +21,23 @@ const LandingPage  = () => {
 	const getHowItWorksSteps = useCallback(() => {
 		const steps = [
 			{
-				title: '1. FIND, start',
-				description: 'join, share, local farming projects'
+				title: '1. SHARE',
+				description: 'Find, start, join, share, local farming projects'
 			},
 			{
 				title: '2. CONNECT',
 				description: `with community of information volunteers, experts, empty space product's ideas`
 			},
 			{
-				title: '3. GROW food',
-				description: 'security in your area ith access to sustainable agriculture'
+				title: '3. GROW',
+				description: 'food security in your area with access to sustainable agriculture'
 			}
 		];
 		return steps.map((step, index) => (
 			<Fade in timeout={{ enter: 300*index }}>
 				<div className="item textItem">
-					<div className="title">{step.title}</div>
-					<div className="description">{step.description}</div>
+					<Typography variant="h5">{step.title}</Typography>
+					<Typography variant="h6">{step.description}</Typography>
 				</div>
 			</Fade>
 		));
@@ -47,7 +48,7 @@ const LandingPage  = () => {
 			<Root>
 				<HeroBanner />
 				<Section className="featuredSection" title="Check out where we are growing" items={getProjectsToShow()} />
-				<Section className="howItWorksSection" title="Growing Food, Feeding People, and Saving the Planet is as easy as 1, 2, 3." items={getHowItWorksSteps()} />
+				<Section className="howItWorksSection" title="CONNECT with Agriculture Global Resources to GROW Local Food Secure Communities." items={getHowItWorksSteps()} />
 			</Root>
 		</Pages>
 	);
