@@ -1,5 +1,6 @@
 {
   "name": "search-and-match",
+  "homepage": "https://skyfarms.io/test/build/",
   "version": "0.2.0",
   "private": true,
   "dependencies": {
