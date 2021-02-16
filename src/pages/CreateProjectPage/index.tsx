@@ -48,7 +48,7 @@ const CreateProjectPage = () => {
 			"questions": finalAnswers
 		};
 
-		axios.post('https://skyfarms.io/search-and-match/index.php', { data })
+		axios.post('https://skyfarms.io/search-and-match/api-search-and-match/public/save/project', { data })
 			.then(res => {
 				console.log("response here: ", res)
 				console.log("res data: ", res.data);
